@@ -1,5 +1,5 @@
 const express = require('express');
-const { User, Comment } = require('../models');
+const { User, Comment, Domain } = require('../models');
 const { isLogin } = require('./middlewares');
 
 const router = express.Router();
@@ -43,25 +43,35 @@ router.get('/show/:page', isLogin, (req, res, next) =>{
 });
 
 
-router.post('/create', isLogin, (req, res, next) =>{
-  const { contents } = req.body;
-  console.log(contents);
-
-  Comment.create({
-    contents,
-    writer : req.user.id
-  })
-  .then((result) =>{
-    res.render('comment');
-  })
-  .catch((error) =>{
-    console.error(error);
-    next(error);
-  });
+router.post('/create', isLogin, async (req, res, next) =>{
+  await Domain.findOne({where : { host : req.user.id }})
+    .then((result) =>{
+      if(result){
+        // have a Keys
+        // Don't have
+        console.log(result.length, result);
+        const { contents } = req.body;
+        Comment.create({
+          contents,
+          writer : req.user.id
+        })
+        .then((result) =>{
+          res.render('comment');
+        })
+        .catch((error) =>{
+          console.error(error);
+          next(error);
+        });
+      }else{
+        // Don't have
+        res.render('apiService')
+      }
+    })
+    .catch((error) =>{
+      console.error(error);
+      next(error);
+    });
 });
-
-
-
 
 
 
