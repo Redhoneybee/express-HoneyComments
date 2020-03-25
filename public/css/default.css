@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
+html, body {
+  width : 100%;
+  height : 100%;
+}
+
+body {
+  font-size : 18px;
+  font-family: 'Acme', sans-serif;
+}
+a{text-decoration: none;}
+a, a:hover, a:visited{
+  color : rgba(231, 76, 60,1.0);
+}
+ol, ul{
+  margin : 10px 0 20px 0;
+  padding : 0;
+  list-style : none;
+}
+
+.container {
+  display : table;
+  width : 40%;
+  height : 40%;
+  margin : auto auto;
+}
+
+.inner{
+  display : table-cell;
+  vertical-align : middle;
+  text-align : center;
+}
+
+.contents{
+  position : relative;
+  display : inline-block;
+  width : 300px;
+  padding: 1em;
+  border : 2px solid rgba(149, 165, 166, 0.3);
+  border-top : 10px solid rgba(192, 57, 43, 0.3);
+}
+
+@keyframes light{
+  from{
+    opacity : 0.5;
+  }to{
+    opacity : 1;
+  }
+}
+
+
+.contents-no-light{
+  border : 2px solid rgba(149, 165, 166, 0.3);
+  border-top : 10px solid rgba(192, 57, 43, 0.3);
+}
+.contents-light{
+  border : 2px solid rgba(149, 165, 166, 1.0);
+  border-top : 10px solid rgba(192, 57, 43,1.0);
+  box-shadow : 3px 3px 3px rgba(189, 195, 199,1.0);
+  animation : light .5s;
+}
+
+
+.title h1{
+  font-size : 32px;
+  font-weight : bold;
+  border-bottom : 5px solid rgba(231, 76, 60, 0.3);
+}
+
+section{
+  margin : 40px 0 40px 0;
+}
+
+.link:hover{
+  text-shadow : 0 0 3px rgba(231, 76, 60, 1.0);
+  color : #fff;
+}
+
+::placeholder {
+  color : #ddd;
+}
+input:focus{
+  outline : none;
+}
+input[type="text"]
+,input[type="password"]{
+  border : 0;
+  border-bottom : 1px solid rgba(231, 76, 60, 0.5);
+  color : rgba(231, 76, 60, 0.8);
+  padding : 5px;
+}
+
+input[type="submit"]{
+  background : rgba(231, 76, 60, 0.4);
+  box-shadow : 0 0 0;
+  padding : 5px 10px 5px 10px;
+  border : 1px solid rgba(231, 76, 60, 0.2);
+  font-weight : bold;
+  cursor : pointer;
+}
+
+.sub-address{
+  position : relative;
+  box-sizing : border-box;
+  font-size : 11px;
+  background-color : rgba(231, 76, 60, 0.3);
+}
+button{
+  margin : 5px;
+  background : rgba(231, 76, 60, 0.4);
+  font-weight : bold;
+  border : 0;
+  border-radius : 5%;
+  padding : 5px;
+  cursor : pointer;
+}

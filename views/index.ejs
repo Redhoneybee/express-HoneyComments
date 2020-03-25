@@ -1,0 +1,31 @@
+<%- include ('./header.ejs') %>
+  <title>Honey API Service</title>
+</head>
+<body>
+  <div class = "container">
+    <div class = "inner">
+      <div class = "contents contents-no-light">
+        <header>
+          <div class = "title"><h1>HONEY API COMB</h1></div>
+          <% if(user && user.user_id){ %>
+            <div class = "welcome">welcome, <%= user.user_name %></div>
+          <% } %>
+        </header>
+        <section>
+          <% if(user && user.user_id){ %>
+            <a class = "link" href="/auth/logout">LOGOUT</a><br><br>
+            <a class = "link" href="/comment">COMMENT</a><br><br>
+            <a class = "link" href="/apiService">API SERVICE</a>
+          <% } else{ %>
+            <a class = "link" href="/login">LOGIN</a><br><br>
+            <a class = "link" href="/join">JOIN</a><br><br>
+          <% } %>
+        </section>
+        <address class="sub-address">
+          http:/github.com/redhoneybee
+        </address>
+      </div>
+    </div>
+  </div>
+</body>
+<%- include ('./footer.ejs') %>

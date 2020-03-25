@@ -1,0 +1,43 @@
+<%- include ('./header.ejs') %>
+  <link rel="stylesheet" href="/css/comment.css">
+  <script type = "application/javascript" src = "/js/comment.js"></script>
+  <title>Honey API Service - commentt</title>
+</head>
+<body>
+  <div class = "container">
+    <div class = "inner">
+      <div class = "contents">
+        <header>
+          <div class = "title"><h1>COMMENT</h1></div>
+        </header>
+        <form action = "/post/create" method = "post">
+        <textarea name="contents" cols = "30" rows = "5" placeholder = "comment" required></textarea>
+          <input type="submit" value = "SUBMIT">
+        </form>
+        <div><button class = "js-back">BACK</button></div><br>
+        <button class = "js-comment-panel-btn">COMMENTS</button>
+        <div class = "js-comment-panel comment-panel">
+          <table class = "js-comments comments">
+            <tr class = "js-comment-header">
+              <td class = "commnet-id">
+                No.
+              </td>
+              <td class = "comment-name">
+                user
+              </td>
+              <td class = "comment-contents">
+                comment
+              </td>
+            </tr>
+          </table><br>
+          <div>
+            <button class = "js-before"><</button>
+            <span class = "js-page-number" data-page = '1'>1</span>
+            <button class = "js-next">></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<%- include ('./footer.ejs') %>

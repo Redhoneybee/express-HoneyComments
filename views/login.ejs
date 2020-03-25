@@ -1,0 +1,34 @@
+<%- include ('./header.ejs') %>
+  <title>Honey API Service - login</title>
+</head>
+<body>
+  <div class = "container">
+    <div class = "inner">
+      <div class = "contents contents-no-light">
+        <header>
+          <div class = "title"><h1>LOGIN</h1></div>
+        </header>
+        <section>
+          <form action="/auth/login" method = "post">
+            <table>
+              <tr>
+                <td><label for="ID">ID</label></td>
+                <td><input type="text" name = "user_id" placeholder = "id" required /></td>
+              </tr>
+              <tr>
+                <td><label for="password">password</label></td>
+                <td><input type="password" name = "user_password" placeholder = "password" required /></td>
+              </tr>
+            </table><br>
+            <input type="submit" value = "SUBMIT">
+          </form>
+          <button class = "js-back">BACK</button>
+        </section>
+        <address class="sub-address">
+          http:/github.com/redhoneybee
+        </address>
+      </div>
+    </div>
+  </div>
+</body>
+<%- include ('./footer.ejs') %>
